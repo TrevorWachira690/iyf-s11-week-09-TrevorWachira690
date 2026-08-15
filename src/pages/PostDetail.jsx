@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import PostCard from "../components/Post/PostCard";
 
 function PostDetail() {
   const { postId } = useParams();
@@ -16,8 +17,7 @@ function PostDetail() {
   return (
     <article>
       <Link to="/posts">&larr; Back to Posts</Link>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <PostCard post={post} />
     </article>
   );
 }
